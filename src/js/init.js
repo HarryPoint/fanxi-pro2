@@ -45,8 +45,7 @@ function init() {
         eMsg.style.top = Math.floor(Math.random() * (topMax - 24)) + "px";
         eMsg.style.color = randomHSLColor();
         eMsg.style.fontSize = Math.floor(Math.random() * 24 + 12) + "px";
-        eMsg.style.animationDuration =
-          Math.floor(Math.random() * 15 + 10) + "s";
+        eMsg.style.animationDuration = Math.floor(Math.random() * 15 + 8) + "s";
         eMsg.classList.add("msg", "run");
         eMsg.textContent = itm.content;
 
@@ -141,7 +140,7 @@ function init() {
 
     function run() {
       let now = Date.now();
-      if (now - preTime > 3000) {
+      if (now - preTime > 2500) {
         const idx = i % msgs.length;
         handleSend(msgs[idx]);
         i = idx + 1;
