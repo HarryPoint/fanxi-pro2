@@ -142,8 +142,10 @@ function init() {
       const idx = i % msgs.length;
       handleSend(msgs[idx]);
       i = idx + 1;
-    }, 1000);
+    }, 3000);
   }
+
+  handleSend("一大波弹幕正在赶来。。。");
 
   randomMsg();
 
