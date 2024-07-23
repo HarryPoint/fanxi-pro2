@@ -85,6 +85,7 @@ function init() {
 
   function randomMsg() {
     let i = 0;
+    let preTime = Date.now();
     const msgs = [
       "看到这个画面，我仿佛看到了希望🌈",
       "程序员的日常：调bug到凌晨三点😴",
@@ -138,11 +139,17 @@ function init() {
       "这个功能，简直是我梦寐以求的🛌",
     ];
 
-    setInterval(() => {
-      const idx = i % msgs.length;
-      handleSend(msgs[idx]);
-      i = idx + 1;
-    }, 3000);
+    function run() {
+      let now = Date.now();
+      if (now - preTime > 3000) {
+        const idx = i % msgs.length;
+        handleSend(msgs[idx]);
+        i = idx + 1;
+        preTime = now;
+      }
+      requestAnimationFrame(run);
+    }
+    run();
   }
 
   handleSend("一大波弹幕正在赶来。。。");
