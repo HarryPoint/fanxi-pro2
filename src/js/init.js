@@ -57,10 +57,12 @@ function init() {
         });
 
         eMsg.addEventListener("mouseover", function () {
+          this.style.zIndex = 1000;
           this.style.animationPlayState = "paused";
         });
 
         eMsg.addEventListener("mouseout", function () {
+          this.style.zIndex = "auto";
           this.style.animationPlayState = "running";
         });
         eCanvas.appendChild(eMsg);
