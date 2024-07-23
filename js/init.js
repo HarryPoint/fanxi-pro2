@@ -45,7 +45,8 @@ function init() {
         eMsg.style.top = Math.floor(Math.random() * (topMax - 24)) + "px";
         eMsg.style.color = randomHSLColor();
         eMsg.style.fontSize = Math.floor(Math.random() * 24 + 12) + "px";
-        eMsg.style.animationDuration = Math.floor(Math.random() * 10 + 5) + "s";
+        eMsg.style.animationDuration =
+          Math.floor(Math.random() * 15 + 10) + "s";
         eMsg.classList.add("msg", "run");
         eMsg.textContent = itm.content;
 
